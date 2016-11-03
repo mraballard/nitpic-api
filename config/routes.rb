@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   resources :users, only: [:index, :create, :show, :update, :destroy] do
-    member do
-      get '/albums', to: 'albums#showall'
-    end
     resources :albums, only: [:show, :create] do
       resources :photos, only: [:index, :show, :create] do
         resources :comments, only: [:index, :create, :destroy]

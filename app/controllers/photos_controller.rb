@@ -4,12 +4,13 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new(photo_params)
-    if photo.save
-      render json: {status: 200, photo: photo}
-    else
-      render json: {status: 422, message: "No content"}
-    end
+    puts params
+    # @photo = Photo.new(photo_params)
+    # if photo.save
+    #   render json: {status: 200, photo: photo}
+    # else
+    #   render json: {status: 422, message: "No content"}
+    # end
   end
 
   def show

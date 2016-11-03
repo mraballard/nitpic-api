@@ -3,8 +3,12 @@ class PhotosController < ApplicationController
     render json: Album.find(params[:album_id]).photos
   end
 
+  def new
+    @photo = Photo.new
+  end
+
   def create
-    photo = Photo.new(photo_params)
+    @photo = Photo.new(photo_params)
     if photo.save
       render json: {status: 200, photo: photo}
     else

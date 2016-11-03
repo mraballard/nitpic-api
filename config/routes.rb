@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     end
     resources :albums, only: [:show, :create] do
       resources :photos, only: [:index, :show, :create] do
-        resources :comments, only: [:index, :create, :destroy]
+        resources :comments, only: [:index, :create]
       end
     end
 
@@ -15,7 +15,8 @@ Rails.application.routes.draw do
     end
   end
   resources :albums, only: [:index, :update, :destroy]
-  resources :photos, only: [:destroy]
+  resources :photos, only: [:new, :destroy]
+  resources :comments, only: [:destroy]
 end
 
 

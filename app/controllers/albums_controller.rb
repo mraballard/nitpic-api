@@ -36,7 +36,7 @@ class AlbumsController < ApplicationController
   def destroy
     album = Album.destroy(params[:id])
 
-    render json: {status: 204}
+    render json: {status: 204, error: album.errors}
   end
 
   private

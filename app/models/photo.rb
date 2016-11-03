@@ -1,4 +1,4 @@
 class Photo < ApplicationRecord
-  belongs_to :album, dependent: :destroy
-  has_many :comments
+  belongs_to :album
+  has_many :comments, dependent: :destroy
 end

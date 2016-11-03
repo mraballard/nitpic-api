@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
-# Use Capistrano for deployment
+# Use Capistrano for deploymenthtml
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do

@@ -19,7 +19,7 @@ class PhotosController < ApplicationController
   end
 
   def show
-    photo = Photo.find(:photo_id)
+    photo = Photo.find(params[:id])
     render json: {status: 200, photo: photo}
   end
 

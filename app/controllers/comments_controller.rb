@@ -1,11 +1,11 @@
 class CommentsController < ApplicationController
   def index
-    comments = Photo.find(:photo_id).comments
+    comments = Photo.find(params[:photo_id]).comments
     render json: {status: 200, comments: comments}
   end
 
   def create
-    comment = Commment.new(comment_params)
+    comment = Comment.new(comment_params)
     if comment.save
       render json: {status: 200, comment: comment}
     else
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
   end
 
   private
-    def commment_params
-      params.required(:comment).permit(:body)
+    def comment_params
+      params.required(:comment).permit(:body, :photo_id)
     end
 end

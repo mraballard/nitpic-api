@@ -1,20 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/create'
-
-  get 'users/show'
-
-  get 'users/update'
-
-  get 'users/destroy'
-
-  get 'users_controller/create'
-
-  get 'users_controller/show'
-
-  get 'users_controller/update'
-
-  get 'users_controller/destroy'
-
+  
   resources :users, only: [:create, :show, :update, :destroy] do
     resources :albums, only: [:index, :show, :create] do
       resources :photos, only: [:index, :show, :create] do

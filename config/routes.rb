@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  
-  resources :users, only: [:create, :show, :update, :destroy] do
+
+  resources :users, only: [:index, :create, :show, :update, :destroy] do
     resources :albums, only: [:index, :show, :create] do
       resources :photos, only: [:index, :show, :create] do
         resources :comments, only: [:index, :create, :destroy]
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       post '/login', to: 'users#login'
     end
   end
-  resources :albums, only: [:update, :destroy]
+  resources :albums, only: [:index, :update, :destroy]
   resources :photos, only: [:destroy]
 end
 

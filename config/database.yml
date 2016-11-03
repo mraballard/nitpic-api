@@ -1,4 +1,5 @@
 # PostgreSQL. Versions 9.1 and up are supported.
+
 #nitpic
 # Install the pg driver:
 #   gem install pg
@@ -11,6 +12,20 @@
 #       Choose the win32 build.
 #       Install PostgreSQL and put its /bin directory on your path.
 #
+
+#
+# Install the pg driver:
+#   gem install pg
+# On OS X with Homebrew:
+#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+# On OS X with MacPorts:
+#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
+# On Windows:
+#   gem install pg
+#       Choose the win32 build.
+#       Install PostgreSQL and put its /bin directory on your path.
+#
+
 # Configure Using Gemfile
 # gem 'pg'
 #
@@ -29,7 +44,11 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
+
   #username: nitpic_json_api
+
+  #username: tunr_json_api
+
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +76,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+
   database: nitpic_api
+
+  database: nitpic_api_test
+
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

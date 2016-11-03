@@ -1,8 +1,18 @@
 class AlbumsController < ApplicationController
   before_action :authenticate, only: [:create, :update, :destroy]
-
+  # index route for root/albums
   def index
     render json: Album.all
+  end
+
+  # index route for users/:id/albums
+  def showall
+    users_albums = Album.find_by(user_id: params[:id])
+    if users_albums
+      render json: {status: 200, albums: users_albums}
+    else
+      render json: {status: 422, message: "No content"}
+    end
   end
 
   def create

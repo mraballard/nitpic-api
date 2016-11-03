@@ -32,9 +32,9 @@ class PhotosController < ApplicationController
     # def photo_params
     #   params.required(:photo).permit(
     #     :title,
-    #     :image_file_name,
-    #     :image_content_type,
-    #     :image_file_size
+    #     :image
     #   )
+    #   I have to figure out how to match the
+    #   form data coming in to match the model
     # end
 end

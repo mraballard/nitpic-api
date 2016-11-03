@@ -10,11 +10,4 @@ Rails.application.routes.draw do
       post '/login', to: 'users#login'
     end
   end
-  # resources :albums do
-  #   resources :photos
-  # end
-  # resources :photos do
-  #   resources :comments, only: [:index, :update, :destroy]
-  # end
-  # resources :comments, only: [:update, :destroy]
 end

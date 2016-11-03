@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  before_action :authenticate, except: [:login, :create]
+  before_action :authenticate, except: [:index, :login, :create]
+
+  def index
+    render json: User.all
+  end
 
   def create
     user = User.new(user_params)
@@ -16,6 +20,12 @@ class UsersController < ApplicationController
   end
 
   def update
+    user = User.find(params[:id])
+    if user.update(user_params)
+      render json: {status: 200, user: user}
+    else
+      render json: {status: 422, user: user}
+    end
   end
 
   def destroy

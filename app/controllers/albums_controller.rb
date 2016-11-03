@@ -1,5 +1,8 @@
 class AlbumsController < ApplicationController
+  before_action :authenticate, only: [:create, :update, :destroy]
+
   def index
+
   end
 
   def show
@@ -12,6 +15,9 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
+    album = Album.destroy(params[:id])
+
+    render json: {status: 204}
   end
 
   private

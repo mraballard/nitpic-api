@@ -4,7 +4,12 @@ class PhotosController < ApplicationController
   end
 
   def create
-    puts params
+    # puts params
+    # params coming through are
+    # puts  params[:title]
+    # puts  params[:image].original_filename
+    # puts  params[:image].content_type
+
     # @photo = Photo.new(photo_params)
     # if photo.save
     #   render json: {status: 200, photo: photo}
@@ -29,8 +34,7 @@ class PhotosController < ApplicationController
     #     :title,
     #     :image_file_name,
     #     :image_content_type,
-    #     :image_file_size,
-    #     :image_updated_at
+    #     :image_file_size
     #   )
     # end
 end

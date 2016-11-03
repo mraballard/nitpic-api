@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
 
     if user.save
-      render json: {status: 200, message: "ok"}
+      render json: {status: 200, message: "ok", token: token}
     else
       render json: {status: 422, user: user, errors: user.errors }
     end

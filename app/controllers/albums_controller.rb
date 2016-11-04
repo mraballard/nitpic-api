@@ -15,8 +15,6 @@ class AlbumsController < ApplicationController
   end
 
   def create
-    # needs conditional that only allows creation if a user is logged
-    # in and matches the set_user
     # might or might not need to call set_user
     set_user
     album = Album.create(

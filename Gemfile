@@ -9,7 +9,7 @@ gem 'pg', '~> 0.18'
 #paperclip to upload images to AWS S3 seamlessly
 gem 'figaro'
 gem 'paperclip', '~> 4.2'
-gem 'aws-sdk', '~> 2.0'
+gem 'aws-sdk', '~> 2.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

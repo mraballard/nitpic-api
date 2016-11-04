@@ -1,0 +1,91 @@
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "estermer"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "estermer"], ["LIMIT", 1]]
+  [1m[35mSQL (35.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "estermer"], ["created_at", 2016-11-04 04:40:25 UTC], ["updated_at", 2016-11-04 04:40:25 UTC], ["password_digest", "$2a$10$bH.3VImUchGYb59edtL9uenJKyLsFZmFefrzNh2AgzcL.nf5dZIRy"]]
+  [1m[35m (25.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "albums" ("title", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "first"], ["description", "first album ever"], ["user_id", 1], ["created_at", 2016-11-04 04:44:33 UTC], ["updated_at", 2016-11-04 04:44:33 UTC]]
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/albums" for 127.0.0.1 at 2016-11-04 00:45:45 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AlbumsController#index as HTML
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+Completed 200 OK in 48ms (Views: 14.5ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2016-11-04 00:45:52 -0400
+Processing by PhotosController#create as HTML
+  Parameters: {"photo"=>{"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x00563ebbd9fe68 @tempfile=#<Tempfile:/tmp/RackMultipart20161104-23363-1g2sidu.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-23363-abq515.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-23363-abq515.jpg[0]'
+Command :: convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-23363-abq515.jpg[0]' -auto-orient -resize "600x600>" '/tmp/9c100d17bf03d48427db8085eadf40bc20161104-23363-vp2oqm'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-23363-abq515.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-23363-abq515.jpg[0]'
+Command :: convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-23363-abq515.jpg[0]' -auto-orient -resize "300x300>" '/tmp/9c100d17bf03d48427db8085eadf40bc20161104-23363-k0gt8p'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-23363-abq515.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-23363-abq515.jpg[0]'
+Command :: convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-23363-abq515.jpg[0]' -auto-orient -resize "200x200>" '/tmp/9c100d17bf03d48427db8085eadf40bc20161104-23363-10sk5ws'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-23363-abq515.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-23363-abq515.jpg[0]'
+Command :: convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-23363-abq515.jpg[0]' -auto-orient -resize "x200" -crop "200x200+31+0" +repage '/tmp/9c100d17bf03d48427db8085eadf40bc20161104-23363-qmoiom'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-23363-bd9n49.jpg'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-23363-1pogl9k.jpg'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 874ms (Views: 0.2ms | ActiveRecord: 3.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+Started GET "/albums" for 127.0.0.1 at 2016-11-04 01:01:50 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AlbumsController#index as HTML
+  [1m[36mAlbum Load (3.1ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+Completed 200 OK in 74ms (Views: 31.7ms | ActiveRecord: 8.8ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2016-11-04 01:02:10 -0400
+Processing by PhotosController#create as HTML
+  Parameters: {"photo"=>{"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x0055ac435fd558 @tempfile=#<Tempfile:/tmp/RackMultipart20161104-24406-1l4tw8w.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-24406-1r3vr70.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-24406-1r3vr70.jpg[0]'
+Command :: convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-24406-1r3vr70.jpg[0]' -auto-orient -resize "600x600>" '/tmp/92634ca67fabf4d133ccd762ecc3220d20161104-24406-tq3225'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-24406-1r3vr70.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-24406-1r3vr70.jpg[0]'
+Command :: convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-24406-1r3vr70.jpg[0]' -auto-orient -resize "300x300>" '/tmp/92634ca67fabf4d133ccd762ecc3220d20161104-24406-aipd0p'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-24406-1r3vr70.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-24406-1r3vr70.jpg[0]'
+Command :: convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-24406-1r3vr70.jpg[0]' -auto-orient -resize "200x200>" '/tmp/92634ca67fabf4d133ccd762ecc3220d20161104-24406-1b96w11'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-24406-1r3vr70.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-24406-1r3vr70.jpg[0]'
+Command :: convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-24406-1r3vr70.jpg[0]' -auto-orient -resize "x200" -crop "200x200+31+0" +repage '/tmp/92634ca67fabf4d133ccd762ecc3220d20161104-24406-8ld760'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161104-24406-1801cnq.jpg'
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "photos" ("title", "album_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Junior Web Developer"], ["album_id", 1], ["created_at", 2016-11-04 05:02:11 UTC], ["updated_at", 2016-11-04 05:02:11 UTC], ["image_file_name", "profile.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 51642], ["image_updated_at", 2016-11-04 05:02:10 UTC]]
+[paperclip] saving /photos/images/000/000/001/original/profile.jpg
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 537ms (ActiveRecord: 6.7ms)
+
+
+  
+NameError (uninitialized constant Paperclip::Storage::S3::AWS):
+  
+app/controllers/photos_controller.rb:11:in `create'
+  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.0ms)
+  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.1ms)

@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     # when it arrives on the front end
     # or do a promise request to ping the albums#index which will return
     # the albums based on the users id like users.album
-    render json: User.find(params[:id])
+    render json: {albums: User.find(params[:id]).albums}
   end
 
   def update

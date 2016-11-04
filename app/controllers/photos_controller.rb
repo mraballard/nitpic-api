@@ -4,11 +4,12 @@ class PhotosController < ApplicationController
   end
 
   def create
-    puts photo_params[:title]
-    puts photo_params[:image]
     album = Album.find(1)
-    photo = Photo.new(photo_params)
-    album.photos << photo
+    photo = Photo.create(
+      title: photo_params[:title],
+      image: photo_params[:image],
+      album_id: album[:id]
+    )
 
     if photo.save
       render json: { status: 200, message: 'Photo successfully uploaded', photo: photo}

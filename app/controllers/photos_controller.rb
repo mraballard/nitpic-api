@@ -1,29 +1,45 @@
 class PhotosController < ApplicationController
+  before_action :set_album, only: [:index, :show]
+
   def index
-    render json: Album.find(params[:album_id]).photos
+    set_album
+    render json: @album.photos
   end
 
   def create
-    photo = Photo.new(photo_params)
+    set_album
+    photo = Photo.create(
+      title: photo_params[:title],
+      image: photo_params[:image],
+      album_id: @album.id
+    )
+
     if photo.save
-      render json: {status: 200, photo: photo}
-    else
-      render json: {status: 422, message: "No content"}
+      render json: { status: 200, message: 'Photo successfully uploaded', photo: photo}
+     else
+       render json: { status: 422, message: photo.errors.full_messages}
     end
   end
 
   def show
     photo = Photo.find(params[:id])
+
     render json: {status: 200, photo: photo}
   end
 
   def destroy
     photo = Photo.destroy(params[:id])
+
     render json: {status: 204}
   end
 
   private
+    def set_album
+      @album = Album.find(params[:album_id])
+    end
+
     def photo_params
-      params.required(:photo).permit(:title, :album_id)
+      # {photo: {title: " ", image: " "} } needs to be like this coming in
+      params.required(:photo).permit(:title, :image)
     end
 end

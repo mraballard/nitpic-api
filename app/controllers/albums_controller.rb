@@ -1,12 +1,28 @@
 class AlbumsController < ApplicationController
   before_action :authenticate, only: [:create, :update, :destroy]
+  before_action :set_user, only: [:index, :create]
+
+  ### To allow create update and delete only by user who is logged in
+  ### this condition will be set on the front end UI angular controllers
 
   def index
-    render json: Album.all
+    # when the user show route is sent back to the angular router
+    # then a http request to this index for albums will be made in
+    # a promise or on a button click
+    # might or might not need to call set_user
+    set_user
+    render json: @user.album
   end
 
   def create
-    album = Album.new(album_params)
+    # might or might not need to call set_user
+    set_user
+    album = Album.create(
+      title: album_params[:title],
+      description: album_params[:description],
+      user_id: @user.id
+    )
+
 
     if album.save
       render json: {status: 200, album: album}
@@ -16,7 +32,15 @@ class AlbumsController < ApplicationController
   end
 
   def show
+    # this will show a sing album sending that one albums data to
+    # the angular front end controller as a response
+    # to show all the photos for this album
+    # we will either through button click or promise after the response
+    # from this route we will do another http request to photos#index
+    # which will get the photos all pertaining to this album based on
+    # this albums id
     album = Album.find(params[:id])
+
     if album
       render json: {status: 200, album: album}
     else
@@ -26,6 +50,7 @@ class AlbumsController < ApplicationController
 
   def update
     album = Album.find(params[:id])
+
     if album.update(album_params)
       render json: {status: 200, album: album}
     else
@@ -40,7 +65,11 @@ class AlbumsController < ApplicationController
   end
 
   private
+    def set_user
+      @user = User.find(params[:user_id])
+    end
+
     def album_params
-      params.required(:album).permit(:title, :description, :user_id)
+      params.required(:album).permit(:title, :description)
     end
 end

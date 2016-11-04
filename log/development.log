@@ -1,518 +1,73 @@
-Started POST "/photos" for 127.0.0.1 at 2016-11-03 16:24:19 -0400
+Started POST "/photos" for 127.0.0.1 at 2016-11-03 21:52:59 -0400
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by PhotosController#create as HTML
-  Parameters: {"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x0055b06d18d198 @tempfile=#<Tempfile:/tmp/RackMultipart20161103-15427-1be9pa0.jpg>, @original_filename="profile2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"profile2.jpg\"\r\nContent-Type: image/jpeg\r\n">}
-Completed 400 Bad Request in 12ms (ActiveRecord: 0.0ms)
+  Parameters: {"photo"=>{"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x0056174c5884c8 @tempfile=#<Tempfile:/tmp/RackMultipart20161103-9258-198dc34.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161103-9258-whja7d.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161103-9258-whja7d.jpg[0]'
+Command :: convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161103-9258-whja7d.jpg[0]' -auto-orient -resize "600x600>" '/tmp/0bb2eead9c6f6d0d630a6b905c1dc93f20161103-9258-mryrqn'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161103-9258-whja7d.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161103-9258-whja7d.jpg[0]'
+Command :: convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161103-9258-whja7d.jpg[0]' -auto-orient -resize "300x300>" '/tmp/0bb2eead9c6f6d0d630a6b905c1dc93f20161103-9258-2rk74w'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161103-9258-whja7d.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161103-9258-whja7d.jpg[0]'
+Command :: convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161103-9258-whja7d.jpg[0]' -auto-orient -resize "x200" -crop "200x200+31+0" +repage '/tmp/0bb2eead9c6f6d0d630a6b905c1dc93f20161103-9258-8jc8ha'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161103-9258-whja7d.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161103-9258-whja7d.jpg[0]'
+Command :: convert '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161103-9258-whja7d.jpg[0]' -auto-orient -resize "x200" -crop "200x200+31+0" +repage '/tmp/0bb2eead9c6f6d0d630a6b905c1dc93f20161103-9258-2gijy9'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161103-9258-11sx8fg.jpg'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/7d97481b1fe66f4b51db90da7e794d9f20161103-9258-dfr1uz.jpg'
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 1572ms (Views: 1.0ms | ActiveRecord: 6.8ms)
 
 
-  
-ActionController::ParameterMissing (param is missing or the value is empty: photo):
-  
-app/controllers/photos_controller.rb:46:in `photo_params'
-app/controllers/photos_controller.rb:7:in `create'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.6ms)
-Started POST "/photos" for 127.0.0.1 at 2016-11-03 16:28:48 -0400
-  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/photos" for 127.0.0.1 at 2016-11-03 21:54:15 -0400
 Processing by PhotosController#create as HTML
-  Parameters: {"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x00561f06324440 @tempfile=#<Tempfile:/tmp/RackMultipart20161103-15891-1e7wdim.png>, @original_filename="profileGA.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"profileGA.png\"\r\nContent-Type: image/png\r\n">}
-Completed 400 Bad Request in 12ms (ActiveRecord: 0.0ms)
+  Parameters: {"photo"=>{"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f1618058950 @tempfile=#<Tempfile:/tmp/RackMultipart20161103-9258-keprel.jpg>, @original_filename="profile2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"profile2.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/f197977349d754c63ff2028cd07db0bf20161103-9258-bvuwpm.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/f197977349d754c63ff2028cd07db0bf20161103-9258-bvuwpm.jpg[0]'
+Command :: convert '/tmp/f197977349d754c63ff2028cd07db0bf20161103-9258-bvuwpm.jpg[0]' -auto-orient -resize "600x600>" '/tmp/78623cb1c859493b5be983eed84a49a920161103-9258-ifwxrq'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/f197977349d754c63ff2028cd07db0bf20161103-9258-bvuwpm.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/f197977349d754c63ff2028cd07db0bf20161103-9258-bvuwpm.jpg[0]'
+Command :: convert '/tmp/f197977349d754c63ff2028cd07db0bf20161103-9258-bvuwpm.jpg[0]' -auto-orient -resize "300x300>" '/tmp/78623cb1c859493b5be983eed84a49a920161103-9258-jnr8sv'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/f197977349d754c63ff2028cd07db0bf20161103-9258-bvuwpm.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/f197977349d754c63ff2028cd07db0bf20161103-9258-bvuwpm.jpg[0]'
+Command :: convert '/tmp/f197977349d754c63ff2028cd07db0bf20161103-9258-bvuwpm.jpg[0]' -auto-orient -resize "200x" -crop "200x200+0+50" +repage '/tmp/78623cb1c859493b5be983eed84a49a920161103-9258-pakr63'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/f197977349d754c63ff2028cd07db0bf20161103-9258-bvuwpm.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/f197977349d754c63ff2028cd07db0bf20161103-9258-bvuwpm.jpg[0]'
+Command :: convert '/tmp/f197977349d754c63ff2028cd07db0bf20161103-9258-bvuwpm.jpg[0]' -auto-orient -resize "200x" -crop "200x200+0+50" +repage '/tmp/78623cb1c859493b5be983eed84a49a920161103-9258-1x7ah48'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/f197977349d754c63ff2028cd07db0bf20161103-9258-we03u.jpg'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/f197977349d754c63ff2028cd07db0bf20161103-9258-18kmqxq.jpg'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 507ms (Views: 0.2ms | ActiveRecord: 0.6ms)
 
 
-  
-ActionController::ParameterMissing (param is missing or the value is empty: photo):
-  
-app/controllers/photos_controller.rb:46:in `photo_params'
-app/controllers/photos_controller.rb:7:in `create'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.5ms)
-Started POST "/photos" for 127.0.0.1 at 2016-11-03 16:33:26 -0400
-  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/photos" for 127.0.0.1 at 2016-11-03 21:56:44 -0400
 Processing by PhotosController#create as HTML
-  Parameters: {"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x005609eac871a8 @tempfile=#<Tempfile:/tmp/RackMultipart20161103-16373-1abih1s.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}
-No template found for PhotosController#create, rendering head :no_content
-Completed 204 No Content in 25ms (ActiveRecord: 0.0ms)
+  Parameters: {"photo"=>{"title"=>"First Post", "image"=>#<ActionDispatch::Http::UploadedFile:0x0056174bff3e90 @tempfile=#<Tempfile:/tmp/RackMultipart20161103-9258-ybf39j.png>, @original_filename="profileGA.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"profileGA.png\"\r\nContent-Type: image/png\r\n">}}
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/3049f357157c64c0d5c4e53b8cc97e3a20161103-9258-b6l8rn.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/3049f357157c64c0d5c4e53b8cc97e3a20161103-9258-b6l8rn.png[0]'
+Command :: convert '/tmp/3049f357157c64c0d5c4e53b8cc97e3a20161103-9258-b6l8rn.png[0]' -auto-orient -resize "600x600>" '/tmp/ad747c208f0cbcb421f419de2b66185920161103-9258-4a15o8'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/3049f357157c64c0d5c4e53b8cc97e3a20161103-9258-b6l8rn.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/3049f357157c64c0d5c4e53b8cc97e3a20161103-9258-b6l8rn.png[0]'
+Command :: convert '/tmp/3049f357157c64c0d5c4e53b8cc97e3a20161103-9258-b6l8rn.png[0]' -auto-orient -resize "300x300>" '/tmp/ad747c208f0cbcb421f419de2b66185920161103-9258-kyi3my'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/3049f357157c64c0d5c4e53b8cc97e3a20161103-9258-b6l8rn.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/3049f357157c64c0d5c4e53b8cc97e3a20161103-9258-b6l8rn.png[0]'
+Command :: convert '/tmp/3049f357157c64c0d5c4e53b8cc97e3a20161103-9258-b6l8rn.png[0]' -auto-orient -resize "200x" -crop "200x200+0+50" +repage '/tmp/ad747c208f0cbcb421f419de2b66185920161103-9258-i06kp6'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/3049f357157c64c0d5c4e53b8cc97e3a20161103-9258-b6l8rn.png[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/3049f357157c64c0d5c4e53b8cc97e3a20161103-9258-b6l8rn.png[0]'
+Command :: convert '/tmp/3049f357157c64c0d5c4e53b8cc97e3a20161103-9258-b6l8rn.png[0]' -auto-orient -resize "200x" -crop "200x200+0+50" +repage '/tmp/ad747c208f0cbcb421f419de2b66185920161103-9258-8l7gz5'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/3049f357157c64c0d5c4e53b8cc97e3a20161103-9258-27uogm.png'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/tmp/3049f357157c64c0d5c4e53b8cc97e3a20161103-9258-t5cw6z.png'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 1026ms (Views: 0.3ms | ActiveRecord: 0.6ms)
 
 
-Started POST "/photos" for 127.0.0.1 at 2016-11-03 16:35:16 -0400
-Processing by PhotosController#create as HTML
-  Parameters: {"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f7654101220 @tempfile=#<Tempfile:/tmp/RackMultipart20161103-16373-x5973z.jpg>, @original_filename="profile2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"profile2.jpg\"\r\nContent-Type: image/jpeg\r\n">}
-No template found for PhotosController#create, rendering head :no_content
-Completed 204 No Content in 11ms (ActiveRecord: 0.0ms)
-
-
-Started POST "/photos" for 127.0.0.1 at 2016-11-03 16:37:49 -0400
-Processing by PhotosController#create as HTML
-  Parameters: {"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f7658148a18 @tempfile=#<Tempfile:/tmp/RackMultipart20161103-16373-1489vnm.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}
-Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
-
-
-  
-ArgumentError (wrong number of arguments (given 2, expected 1)):
-  
-app/controllers/photos_controller.rb:46:in `photo_params'
-app/controllers/photos_controller.rb:7:in `create'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.2ms)
-Started POST "/photos" for 127.0.0.1 at 2016-11-03 16:38:26 -0400
-Processing by PhotosController#create as HTML
-  Parameters: {"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x005609eaa601e0 @tempfile=#<Tempfile:/tmp/RackMultipart20161103-16373-1m6xt6p.jpg>, @original_filename="profile2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"profile2.jpg\"\r\nContent-Type: image/jpeg\r\n">}
-Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
-
-
-  
-NoMethodError (undefined method `permit' for #<ActionDispatch::Http::UploadedFile:0x005609eaa601e0>
-Did you mean?  print):
-  
-app/controllers/photos_controller.rb:46:in `photo_params'
-app/controllers/photos_controller.rb:7:in `create'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.7ms)
-Started POST "/photos" for 127.0.0.1 at 2016-11-03 16:40:21 -0400
-  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by PhotosController#create as HTML
-  Parameters: {"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x00563a29736770 @tempfile=#<Tempfile:/tmp/RackMultipart20161103-16861-1fzmka6.jpg>, @original_filename="profile2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"profile2.jpg\"\r\nContent-Type: image/jpeg\r\n">}
-Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
-
-
-  
-ArgumentError (wrong number of arguments (given 2, expected 1)):
-  
-app/controllers/photos_controller.rb:46:in `photo_params'
-app/controllers/photos_controller.rb:7:in `create'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.2ms)
-Started POST "/photos" for 127.0.0.1 at 2016-11-03 16:43:37 -0400
-Processing by PhotosController#create as HTML
-  Parameters: {"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f2a40151960 @tempfile=#<Tempfile:/tmp/RackMultipart20161103-16861-ryb7qh.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}
-Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionController::ParameterMissing (param is missing or the value is empty: photo):
-  
-app/controllers/photos_controller.rb:46:in `photo_params'
-app/controllers/photos_controller.rb:7:in `create'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.8ms)
-Started POST "/photos" for 127.0.0.1 at 2016-11-03 16:46:16 -0400
-  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by PhotosController#create as HTML
-  Parameters: {"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x00563c95d5e558 @tempfile=#<Tempfile:/tmp/RackMultipart20161103-17767-ih5ng5.jpg>, @original_filename="profile2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"profile2.jpg\"\r\nContent-Type: image/jpeg\r\n">}
-Completed 400 Bad Request in 17ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionController::ParameterMissing (param is missing or the value is empty: photo):
-  
-app/controllers/photos_controller.rb:46:in `photo_params'
-app/controllers/photos_controller.rb:7:in `create'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.1ms)
-Started POST "/photos" for 127.0.0.1 at 2016-11-03 16:46:42 -0400
-Processing by PhotosController#create as HTML
-  Parameters: {"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f22c005b2e0 @tempfile=#<Tempfile:/tmp/RackMultipart20161103-17767-1waxc25.jpg>, @original_filename="profile2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"profile2.jpg\"\r\nContent-Type: image/jpeg\r\n">}
-Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
-
-
-  
-ActionController::ParameterMissing (param is missing or the value is empty: photo):
-  
-app/controllers/photos_controller.rb:46:in `photo_params'
-app/controllers/photos_controller.rb:7:in `create'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.2ms)
-Started POST "/photos" for 127.0.0.1 at 2016-11-03 16:57:51 -0400
-  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by PhotosController#create as HTML
-  Parameters: {"title"=>"Junior Web Developer", "image"=>#<ActionDispatch::Http::UploadedFile:0x0055bea57d8868 @tempfile=#<Tempfile:/tmp/RackMultipart20161103-18657-opc7qv.jpg>, @original_filename="profile2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"profile2.jpg\"\r\nContent-Type: image/jpeg\r\n">}
-Completed 500 Internal Server Error in 61ms (ActiveRecord: 6.5ms)
-
-
-  
-ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
-  
-app/controllers/photos_controller.rb:12:in `create'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.6ms)
-Started GET "/" for 127.0.0.1 at 2016-11-03 17:21:32 -0400
-  
-ActionController::RoutingError (uninitialized constant WelcomeController):
-  
-activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:268:in `const_get'
-activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:268:in `block in constantize'
-activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `each'
-activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
-activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
-actionpack (5.0.0.1) lib/action_dispatch/http/request.rb:93:in `controller_class'
-actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:44:in `controller'
-actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:30:in `serve'
-actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
-actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
-actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
-actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
-rack (2.0.1) lib/rack/etag.rb:25:in `call'
-rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.1) lib/rack/head.rb:12:in `call'
-rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
-rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
-activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
-activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
-activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
-activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.0) lib/puma/configuration.rb:225:in `call'
-puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.0) lib/puma/server.rb:415:in `process_client'
-puma (3.6.0) lib/puma/server.rb:275:in `block in run'
-puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
-  Rendered collection of /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [22 times] (7.5ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.3ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (42.5ms)
-Started GET "/users" for 127.0.0.1 at 2016-11-03 17:21:35 -0400
-Processing by UsersController#index as HTML
-  [1m[36mUser Load (24.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-Completed 200 OK in 36ms (Views: 3.4ms | ActiveRecord: 29.8ms)
-
-
-Started OPTIONS "//photos" for 127.0.0.1 at 2016-11-03 17:43:37 -0400
-  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  
-ActionController::RoutingError (No route matches [OPTIONS] "/photos"):
-  
-actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.0) lib/puma/configuration.rb:225:in `call'
-puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.0) lib/puma/server.rb:415:in `process_client'
-puma (3.6.0) lib/puma/server.rb:275:in `block in run'
-puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.8ms)
-  Rendered collection of /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [22 times] (15.1ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (16.2ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.9ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (83.0ms)
-Started OPTIONS "/photos" for 127.0.0.1 at 2016-11-03 17:44:18 -0400
-  
-ActionController::RoutingError (No route matches [OPTIONS] "/photos"):
-  
-actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.0) lib/puma/configuration.rb:225:in `call'
-puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.0) lib/puma/server.rb:415:in `process_client'
-puma (3.6.0) lib/puma/server.rb:275:in `block in run'
-puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (22.1ms)
-  Rendered collection of /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [22 times] (12.7ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (62.4ms)
-Started OPTIONS "/photos" for 127.0.0.1 at 2016-11-03 17:45:40 -0400
-  
-ActionController::RoutingError (No route matches [OPTIONS] "/photos"):
-  
-actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.0) lib/puma/configuration.rb:225:in `call'
-puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.0) lib/puma/server.rb:415:in `process_client'
-puma (3.6.0) lib/puma/server.rb:275:in `block in run'
-puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
-  Rendered collection of /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [22 times] (8.6ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (44.6ms)
-Started OPTIONS "/photos" for 127.0.0.1 at 2016-11-03 18:36:09 -0400
-  
-ActionController::RoutingError (No route matches [OPTIONS] "/photos"):
-  
-actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.0) lib/puma/configuration.rb:225:in `call'
-puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.0) lib/puma/server.rb:415:in `process_client'
-puma (3.6.0) lib/puma/server.rb:275:in `block in run'
-puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
-  Rendered collection of /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [22 times] (15.0ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.3ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (52.8ms)
-Started OPTIONS "/photos" for 127.0.0.1 at 2016-11-03 18:37:00 -0400
-  
-ActionController::RoutingError (No route matches [OPTIONS] "/photos"):
-  
-actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.0) lib/puma/configuration.rb:225:in `call'
-puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.0) lib/puma/server.rb:415:in `process_client'
-puma (3.6.0) lib/puma/server.rb:275:in `block in run'
-puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
-  Rendered collection of /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [22 times] (16.0ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (55.0ms)
-Started OPTIONS "/photos" for 127.0.0.1 at 2016-11-03 18:38:41 -0400
-  
-ActionController::RoutingError (No route matches [OPTIONS] "/photos"):
-  
-actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.0) lib/puma/configuration.rb:225:in `call'
-puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.0) lib/puma/server.rb:415:in `process_client'
-puma (3.6.0) lib/puma/server.rb:275:in `block in run'
-puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
-  Rendered collection of /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [22 times] (7.5ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.2ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (46.8ms)
-Started POST "/photos" for 127.0.0.1 at 2016-11-03 20:15:14 -0400
-  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-Processing by PhotosController#create as HTML
-  Parameters: {"photo"=>"[object Object]"}
-Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms)
-
-
-  
-NoMethodError (undefined method `permit' for "[object Object]":String
-Did you mean?  print):
-  
-app/controllers/photos_controller.rb:41:in `photo_params'
-app/controllers/photos_controller.rb:7:in `create'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.6ms)
-Started OPTIONS "/photos" for 127.0.0.1 at 2016-11-03 21:13:00 -0400
-  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
-  
-ActionController::RoutingError (No route matches [OPTIONS] "/photos"):
-  
-actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
-railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
-rack (2.0.1) lib/rack/method_override.rb:22:in `call'
-rack (2.0.1) lib/rack/runtime.rb:22:in `call'
-activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
-rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
-railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
-puma (3.6.0) lib/puma/configuration.rb:225:in `call'
-puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
-puma (3.6.0) lib/puma/server.rb:415:in `process_client'
-puma (3.6.0) lib/puma/server.rb:275:in `block in run'
-puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
-  Rendered collection of /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [22 times] (80.1ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (118.9ms)
-  Rendering /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.7ms)
-  Rendered /home/eric/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (330.1ms)

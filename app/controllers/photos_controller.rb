@@ -4,25 +4,13 @@ class PhotosController < ApplicationController
   end
 
   def create
-    puts photo_params
-    # params coming through are
-    # puts  params[:title]
-    # puts  params[:image]
+    photo = Photo.create(photo_params)
 
-    # photo = Photo.new(params)
-    #
-    # if photo.save
-    #   render json: { status: 200, message: 'Photo successfully uploaded'}
-    #  else
-    #    render json: { status: 422, message: 'Upload Unsuccessful!'}
-    # end
-
-    # @photo = Photo.new(photo_params)
-    # if photo.save
-    #   render json: {status: 200, photo: photo}
-    # else
-    #   render json: {status: 422, message: "No content"}
-    # end
+    if photo.save
+      render json: { status: 200, message: 'Photo successfully uploaded'}
+     else
+       render json: { status: 422, message: 'Upload Unsuccessful!'}
+    end
   end
 
   def show
@@ -38,6 +26,6 @@ class PhotosController < ApplicationController
   private
     def photo_params
       # {photo: {title: " ", image: " "} } needs to be like this coming in
-      params.require(:photo).permit(:title, :image)
+      params.required(:photo).permit(:title, :image)
     end
 end

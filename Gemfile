@@ -7,7 +7,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # gem 'sqlite3'
 gem 'pg', '~> 0.18'
 #paperclip to upload images to AWS S3 seamlessly
-gem 'paperclip', '~> 3.0'
+gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '~> 2.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'rack-cors'
 gem 'jwt'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 

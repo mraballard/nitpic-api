@@ -1,4 +1,4 @@
 # Ignore application configuration
 /config/application.yml
 .env
-/log/development.log
+./log/development.log

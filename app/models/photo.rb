@@ -4,7 +4,7 @@ class Photo < ApplicationRecord
   has_attached_file :image, styles: {
     large: '600x600>',
     medium: '300x300>',
-    thumb: '200x200#',
+    thumb: '200x200>',
     square: '200x200#'
   }
 

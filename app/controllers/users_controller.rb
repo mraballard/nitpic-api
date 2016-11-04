@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     # in the case we want a user or non user search
-    # another user to look at there albums and photos
+    # another user to look at their albums and photos
     render json: User.all
   end
 

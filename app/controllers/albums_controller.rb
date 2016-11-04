@@ -11,7 +11,7 @@ class AlbumsController < ApplicationController
     # a promise or on a button click
     # might or might not need to call set_user
     set_user
-    render json: @user.album
+    render json: @user.albums
   end
 
   def create

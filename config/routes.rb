@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   resources :users, except: :new do
-    resources :albums, only: [:show, :create]
+    resources :albums, only: [:index, :create]
 
     collection do
       post '/login', to: 'users#login'
     end
   end
-  resources :albums, only: [:index, :show, :update, :destroy] do
-    resources :photos, only: [:show, :create]
+  resources :albums, only: [:show, :update, :destroy] do
+    resources :photos, only: [:index, :create]
   end
-  resources :photos, only: [:index, :show, :destroy] do
-    resources :comments, only: [:show, :create]
+  resources :photos, only: [:show, :destroy] do
+    resources :comments, only: [:index, :create]
   end
 
   resources :photos, only: [:create, :destroy]

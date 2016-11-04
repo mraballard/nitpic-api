@@ -4,11 +4,18 @@ class PhotosController < ApplicationController
   end
 
   def create
-    # puts params
+    puts photo_params
     # params coming through are
     # puts  params[:title]
-    # puts  params[:image].original_filename
-    # puts  params[:image].content_type
+    # puts  params[:image]
+
+    # photo = Photo.new(params)
+    #
+    # if photo.save
+    #   render json: { status: 200, message: 'Photo successfully uploaded'}
+    #  else
+    #    render json: { status: 422, message: 'Upload Unsuccessful!'}
+    # end
 
     # @photo = Photo.new(photo_params)
     # if photo.save
@@ -29,12 +36,8 @@ class PhotosController < ApplicationController
   end
 
   private
-    # def photo_params
-    #   params.required(:photo).permit(
-    #     :title,
-    #     :image
-    #   )
-    #   I have to figure out how to match the
-    #   form data coming in to match the model
-    # end
+    def photo_params
+      # {photo: {title: " ", image: " "} } needs to be like this coming in
+      params.require(:photo).permit(:title, :image)
+    end
 end

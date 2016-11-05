@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate, except: [:index, :login, :create]
+  before_action :authenticate, except: [:index, :login, :create, :show]
 
   def index
     # in the case we want a user or non user search

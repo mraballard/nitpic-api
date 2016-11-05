@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
 
   def index
     set_album
-    render json: @album.photos
+    render json: {status: 200, photos: @album.photos}
   end
 
   def create

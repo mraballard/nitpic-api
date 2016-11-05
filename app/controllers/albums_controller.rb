@@ -54,13 +54,12 @@ class AlbumsController < ApplicationController
     if album.update(album_params)
       render json: {status: 200, album: album}
     else
-      render json: {status: 422, user: user}
+      render json: {status: 422, errors: album.errors}
     end
   end
 
   def destroy
     album = Album.destroy(params[:id])
-    puts "Destroying album..."
     render json: {status: 204, error: album.errors}
   end
 

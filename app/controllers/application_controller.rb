@@ -11,9 +11,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     return if !bearer_token
-    decoded_jwt = decode_token(request.env["HTTP_AUTHORIZATION"])
-
-    User.find(decoded_jwt.user.id)
+    decoded_jwt = decode_token(bearer_token)
   end
 
   def decode_token(token)

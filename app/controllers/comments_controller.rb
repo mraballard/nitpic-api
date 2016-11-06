@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate, only: [:create, :destroy]
+  before_action :set_user, only: [:create]
   before_action :set_photo, only: [:index, :create, :destroy]
 
   def index
@@ -10,7 +11,9 @@ class CommentsController < ApplicationController
   def create
     comment = Comment.create(
       body: comment_params[:body],
-      photo_id: @photo.id
+      photo_id: @photo.id,
+      username: @user.username,
+      user_id: @user.id
     )
 
     if comment.save
@@ -29,6 +32,13 @@ class CommentsController < ApplicationController
   private
     def set_photo
       @photo = Photo.find(params[:photo_id])
+    end
+
+    def set_user
+      puts "Current_USER::::::"
+      user = current_user
+      user = user[0]
+      @user = User.find(user["user"]["id"])
     end
 
     def comment_params

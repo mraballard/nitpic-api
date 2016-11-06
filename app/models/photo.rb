@@ -9,7 +9,7 @@ class Photo < ApplicationRecord
   }
 
   def get_photo_data
-    photo.image.url(:large)
+    { source: photo.image.url(:large) }
   end
 
   # Validate the attached image is image/jpg, image/png, etc

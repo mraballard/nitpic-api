@@ -8,10 +8,6 @@ class Photo < ApplicationRecord
     square: '200x200#'
   }
 
-  def get_image_properties
-    
-  end
-
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :image, :content_type => /^image\/(png|gif|jpeg)/
 end

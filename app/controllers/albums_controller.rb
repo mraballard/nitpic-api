@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :authenticate, only: [:create, :update, :destroy]
-  before_action :set_user, only: [:index, :create]
+  before_action :set_user, only: [:index, :create, :destroy]
 
   ### To allow create update and delete only by user who is logged in
   ### this condition will be set on the front end UI angular controllers
@@ -11,7 +11,7 @@ class AlbumsController < ApplicationController
     # a promise or on a button click
     # might or might not need to call set_user
     set_user
-    render json: @user.albums
+    render json: {status: 200, photos: @user.albums}
   end
 
   def create
@@ -54,13 +54,12 @@ class AlbumsController < ApplicationController
     if album.update(album_params)
       render json: {status: 200, album: album}
     else
-      render json: {status: 422, user: user}
+      render json: {status: 422, errors: album.errors}
     end
   end
 
   def destroy
     album = Album.destroy(params[:id])
-
     render json: {status: 204, error: album.errors}
   end
 

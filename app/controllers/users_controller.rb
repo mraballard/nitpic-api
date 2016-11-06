@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  before_action :authenticate, except: [:index, :login, :create]
+  before_action :authenticate, except: [:index, :login, :create, :show]
 
   def index
     # in the case we want a user or non user search
     # another user to look at their albums and photos
-    render json: User.all
+    render json: {status: 200, users: User.all}
   end
 
   def create
@@ -24,7 +24,9 @@ class UsersController < ApplicationController
     # when it arrives on the front end
     # or do a promise request to ping the albums#index which will return
     # the albums based on the users id like users.album
-    render json: {albums: User.find(params[:id]).albums}
+    user = User.find(params[:id])
+    albums = User.find(params[:id]).albums
+    render json: {status: 200, user: user, albums: albums}
   end
 
   def update

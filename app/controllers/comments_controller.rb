@@ -1,9 +1,9 @@
 class CommentsController < ApplicationController
-  before_action :set_photo, only: [:index, :create]
+  before_action :set_photo, only: [:index, :create, :destroy]
 
   def index
     set_photo
-    render json: @photo.comment
+    render json: {status: 200, comments: @photo.comments}
   end
 
   def create
@@ -14,15 +14,16 @@ class CommentsController < ApplicationController
     )
 
     if comment.save
-      render json: {status: 200, comment: comment}
+      render json: {status: 200, comments: @photo.comments}
     else
       render json: {status: 422, message: "No content"}
     end
   end
 
   def destroy
+    set_photo
     comment = Comment.destroy(params[:id])
-    render json: {status: 204}
+    render json: {status: 200, comments: @photo.comments}
   end
 
   private

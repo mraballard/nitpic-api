@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate, only: [:create, :destroy]
   before_action :set_photo, only: [:index, :create, :destroy]
 
   def index
@@ -7,7 +8,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    set_photo
     comment = Comment.create(
       body: comment_params[:body],
       photo_id: @photo.id

@@ -24,7 +24,7 @@ class PhotosController < ApplicationController
   def show
     photo = Photo.find(params[:id])
 
-    render json: {status: 200, photo: photo.get_photo_data}
+    render json: {status: 200, photo: photo, source: photo.get_photo_url}
   end
 
   def destroy

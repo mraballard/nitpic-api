@@ -9,13 +9,7 @@ class Photo < ApplicationRecord
   }
 
   def get_photo_data
-    {
-      id: photo.id,
-      title: photo.title,
-      image_file_name: photo.image_file_name,
-      image_large_url: photo.image.url(:large),
-      comments: photo.comments
-    }
+    photo.image.url(:large)
   end
 
   # Validate the attached image is image/jpg, image/png, etc

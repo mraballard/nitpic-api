@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
 
   def index
     set_album
-    render json: {status: 200, photos: @album.get_img_urls_and_ids}
+    render json: {status: 200, photos: @album.get_photos_data}
   end
 
   def create
@@ -24,7 +24,7 @@ class PhotosController < ApplicationController
   def show
     photo = Photo.find(params[:id])
 
-    render json: {status: 200, photo: photo}
+    render json: {status: 200, photo: photo.get_photo_data}
   end
 
   def destroy

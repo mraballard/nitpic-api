@@ -8,6 +8,16 @@ class Photo < ApplicationRecord
     square: '200x200#'
   }
 
+  def get_photo_data
+    {
+      id: photo.id,
+      title: photo.title,
+      image_file_name: photo.image_file_name,
+      image_large_url: photo.image.url(:large),
+      comments: photo.comments
+    }
+  end
+
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :image, :content_type => /^image\/(png|gif|jpeg)/
 end

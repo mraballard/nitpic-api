@@ -2,7 +2,7 @@ class Album < ApplicationRecord
   belongs_to :user
   has_many :photos, dependent: :destroy
 
-  def get_img_urls_and_ids
+  def get_photos_data
     # needs photos id and url thumb
     photos.map {|photo|
       photo = {

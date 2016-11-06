@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :authenticate, only: [:create, :destroy]
+  before_action :authenticate, only: [:destroy]
   before_action :set_album, only: [:index]
 
   def index

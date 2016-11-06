@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   def index
     set_photo
-    render json: @photo.comment
+    render json: {status: 200, comments: @photo.comments}
   end
 
   def create

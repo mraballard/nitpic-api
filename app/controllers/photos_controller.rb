@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
-  before_action :set_album, only: [:index, :show]
+  before_action :authenticate, only: [:create, :destroy]
+  before_action :set_album, only: [:index]
 
   def index
     set_album
@@ -23,8 +24,7 @@ class PhotosController < ApplicationController
 
   def show
     photo = Photo.find(params[:id])
-
-    render json: {status: 200, photo: photo, source: photo.get_photo_url}
+    render json: {status: 200, photo: photo.get_photo_data}
   end
 
   def destroy

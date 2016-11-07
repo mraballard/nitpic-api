@@ -6,7 +6,11 @@ class Photo < ApplicationRecord
     medium: '300x300>',
     thumb: '200x200>',
     square: '200x200#'
-  } 
+  }
+
+  def get_photo_data
+    { source: photo.image.url(:large) }
+  end
 
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :image, :content_type => /^image\/(png|gif|jpeg)/
